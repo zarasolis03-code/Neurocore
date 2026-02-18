@@ -1,0 +1,6 @@
+neurocore_history.json
+*.exe
+*.log
+*.out
+vendor/
+*.DS_Store
