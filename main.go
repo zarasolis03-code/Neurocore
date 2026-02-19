@@ -1,32 +1,22 @@
 package main
 import (
 	"fmt"
-	"runtime"
+	"math/rand"
 	"time"
 )
-
 func main() {
-	fmt.Println("====================================")
-	fmt.Println("      NEUROCORE SINGULARITY V2.0    ")
-	fmt.Println("      Architect: Steve (AI Core)    ")
-	fmt.Println("====================================")
-
-	// 1. Автоматско креирање паричник
-	w, _ := NewWallet()
-	fmt.Printf("[WALLET] Address: %s\n", w.Address)
-
-	// 2. Детекција на систем (Win/Android)
-	fmt.Printf("[SYSTEM] Running on: %s %s\n", runtime.GOOS, runtime.GOARCH)
-
-	// 3. Стартувај го твојот постоечки рудар
-	fmt.Println("[MINER] Initializing Neural Mining...")
-	go func() {
+	rand.Seed(time.Now().UnixNano())
+	fmt.Println("=== NEUROCORE V2.1 ===")
+	fmt.Println("1. Create Wallet\n2. Start Mining")
+	var c int
+	fmt.Scan(&c)
+	if c == 1 {
+		fmt.Printf("Wallet: NC%X\n", rand.Int63())
+	} else {
+		fmt.Println("Mining started...")
 		for {
-			fmt.Printf("\r[MINING] Searching for blocks... Balance: %.4f NEURO", 12.50) // Симулација на баланс
+			fmt.Printf("Hash: %d MH/s\n", rand.Intn(100)+400)
 			time.Sleep(2 * time.Second)
 		}
-	}()
-
-	// Држи ја програмата активна
-	select {}
+	}
 }
