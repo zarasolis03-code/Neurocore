@@ -1,10 +1,5 @@
 # 🚀 NEUROCORE DIRECT
-Download and Run. No browser needed.
+**Architect: Steve**
 
-### 📱 Android
-1. Download `neuro_mob`
-2. In Termux: `chmod +x neuro_mob && ./neuro_mob`
-
-### 🪟 Windows
-1. Download `neuro_win.exe`
-2. Run it.
+Standalone blockchain miner and wallet. 
+Download `neuro_app` for Android or `neuro_win.exe` for Windows.
