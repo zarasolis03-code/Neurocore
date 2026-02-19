@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEUROCORE SINGULARITY v3.0</title>
+    <style>
+        body { background: #000; color: #00ff41; font-family: 'Courier New', monospace; margin: 0; padding: 20px; overflow: hidden; }
+        .glitch { font-size: 28px; font-weight: bold; text-transform: uppercase; position: relative; text-shadow: 0.05em 0 0 #00ff41, -0.025em -0.05em 0 #ff0000; animation: glitch 500ms infinite; }
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #00ff41, -0.05em -0.025em 0 #ff0000; }
+            50% { text-shadow: -0.05em -0.025em 0 #00ff41, 0.025em 0.025em 0 #ff0000; }
+            100% { text-shadow: -0.025em 0 0 #00ff41, -0.025em -0.05em 0 #ff0000; }
+        }
+        .stats-box { border: 1px solid #00ff41; padding: 15px; margin: 20px 0; background: rgba(0, 255, 65, 0.05); border-radius: 5px; box-shadow: 0 0 15px rgba(0, 255, 65, 0.2); }
+        .console { background: #050505; border-left: 3px solid #00ff41; height: 350px; padding: 10px; overflow-y: hidden; font-size: 13px; line-height: 1.5; color: #00ff41; opacity: 0.8; }
+        .btn-active { background: #00ff41; color: #000; border: none; padding: 18px; width: 100%; font-size: 18px; font-weight: bold; letter-spacing: 2px; cursor: pointer; transition: 0.3s; box-shadow: 0 0 20px #00ff41; }
+        .btn-active:active { transform: scale(0.95); box-shadow: 0 0 5px #00ff41; }
+        .status-bar { font-size: 12px; margin-bottom: 10px; color: #fff; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="status-bar">Network: SECURE | Node: ACTIVE | v3.0</div>
+    <div class="glitch">NEUROCORE v3.0</div>
+    
+    <div class="stats-box">
+        <div>CORE_TEMP: <span id="temp">36</span>°C</div>
+        <div>HASH_RATE: <span id="hash">0.00</span> TH/s</div>
+        <div>TOTAL_NC: <span id="coins">0.000000</span></div>
+    </div>
+
+    <div class="console" id="log"></div>
+    <br>
+    <button class="btn-active" onclick="initiate()">INITIALIZE SYSTEM</button>
+
+    <script>
+        const log = document.getElementById('log');
+        let coins = 0;
+
+        function addLog(text, type = 'info') {
+            const line = document.createElement('div');
+            line.innerHTML = `[${new Date().toLocaleTimeString()}] ${text}`;
+            if(type === 'success') line.style.color = '#fff';
+            log.appendChild(line);
+            if (log.childNodes.length > 15) log.removeChild(log.childNodes[0]);
+        }
+
+        function initiate() {
+            addLog("AUTHENTICATING PROTOCOLS...", "info");
+            setTimeout(() => {
+                addLog("ACCESS GRANTED. STARTING NEURAL MINER...", "success");
+                startMining();
+            }, 1500);
+        }
+
+        function startMining() {
+            setInterval(() => {
+                let h = (Math.random() * 500 + 800).toFixed(2);
+                document.getElementById('hash').innerText = h;
+                document.getElementById('temp').innerText = Math.floor(Math.random() * 10 + 40);
+                coins += 0.000012;
+                document.getElementById('coins').innerText = coins.toFixed(6);
+                
+                if(Math.random() > 0.7) {
+                    addLog(`>> BLOCK FOUND: 0x${Math.random().toString(16).slice(2,10).toUpperCase()}`, "success");
+                }
+            }, 800);
+        }
+    </script>
+</body>
+</html>
