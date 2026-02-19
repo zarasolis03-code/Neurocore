@@ -1,9 +1,8 @@
-# 🌐 NEUROCORE V2.1 OFFICIAL
-**THE DIRECT INSTALLER**
+# 🌐 NEUROCORE V2.1
+### DIRECT INSTALLER
 
-### 📥 HOW TO INSTALL:
-1. Download `Neurocore.apk` from the file list above.
-2. Open the file and click **Install**.
-3. Start mining directly from your app drawer!
+1. Download **Neurocore_Final_Installer.apk**
+2. Open with **Package Installer** (not Google Wallet)
+3. If it fails, use **ZArchiver** to "Open as App".
 
 *Architect: Steve*
