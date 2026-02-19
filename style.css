@@ -1,0 +1,26 @@
+body {
+    background: radial-gradient(circle, #0a0a0a 0%, #000 100%);
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container {
+    border: 1px solid #00ff00;
+    padding: 30px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.9);
+    box-shadow: 0 0 20px rgba(0,255,0,0.2);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+.glow { text-shadow: 0 0 10px #00ff00; letter-spacing: 5px; }
+.stats { display: flex; justify-content: space-between; margin: 20px 0; gap: 10px; }
+.card { background: #111; padding: 10px; border-radius: 5px; flex: 1; border-bottom: 2px solid #00ff00; font-size: 0.8rem; }
+.live-feed { text-align: left; background: #050505; border: 1px solid #222; padding: 15px; height: 150px; overflow-y: auto; font-size: 0.75rem; }
+.btn-mine { background: none; border: 1px solid #00ff00; color: #00ff00; padding: 10px 20px; cursor: pointer; transition: 0.3s; width: 100%; }
+.btn-mine:hover { background: #00ff00; color: #000; }
